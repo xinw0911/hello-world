@@ -7,6 +7,7 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
+  core.setOutput("nameToGreet", nameToGreet);
   fs.writeFileSync('HelloWorld.txt', `Hello ${nameToGreet}!`)
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
